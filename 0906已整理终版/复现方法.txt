@@ -1,0 +1,3 @@
+
+bash debug_singleheight.sh
+然后再 test. 

@@ -1,0 +1,34 @@
+MODEL:
+  LAYER_CHANNELS: [128, 128, 256, 256, 512, 512, 1024]
+  USE_SA: [False, False, False, False, True, True, True]
+  DOUBLE_RES: [False, False, False, False, False, False, True]
+  DIFFUSION_STEPS: 1000
+  DDIM_STEPS: 10
+  GLOBAL_TIME_DIM: 256
+  LAYER_BLOCK_NUM: 2
+  SINGLE_HEIGHT: True
+
+INPUT:
+  DATASET_NAME: "SpectrumNet"
+  DATASET_ROOT: r"N/A"
+  TRAIN_PERCENT: 0.8
+  HYBRID_GEO: ["Island"]
+  SAMPLE_EACH_HEIGHT_SEPARATELY: False
+  NUM_SAMPLE: 10
+
+SOLVER:
+  EPOCHS: 60
+  WARMUP_EPOCHS: 5
+  BATCH_SIZE: 8
+  NUM_WORKERS: 8
+  LR: 2e-4
+  WEIGHT_DECAY: 1e-5
+  LOG_ITER: 10
+
+CONDITION:
+  TARGET_HEIGHT: "Hybrid" # ["Hybrid", "0", "1", "2"]
+  
+TEST:
+  BATCH_SIZE: 1
+  RERANK_FORCE: 1
+  
